@@ -4,6 +4,6 @@ namespace LogoFX.Client.Theming
 {
     public interface IThemeNotifyChanged
     {
-        event EventHandler ColorThemeChanged;
+        event EventHandler Updated;
     }
 }

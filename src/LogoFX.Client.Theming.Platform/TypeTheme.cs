@@ -8,20 +8,22 @@ using System.Windows.Threading;
 
 namespace LogoFX.Client.Theming
 {
-    internal sealed class TypeTheme : ThemeBase
+    internal sealed class TypeTheme : ThemeTree
     {
         private readonly Dispatcher _dispatcher;
         private readonly Type _resourceDictionaryType;
 
-        public TypeTheme(string name, Type resourceDictionaryType)
-            : base(name)
+        public TypeTheme(string name, Type resourceDictionaryType, int order)
+            : base(name, order)
         {
             _dispatcher = Application.Current.Dispatcher;
             _resourceDictionaryType = resourceDictionaryType;
         }
 
-        protected override ResourceDictionary[] LoadResoucesInternal()
+        protected override ResourceDictionary[] LoadResoucesInternal(HashSet<string> dics)
         {
+            var result = new List<ResourceDictionary>(base.LoadResoucesInternal(dics));
+
             ResourceDictionary resourceDictionary = null;
             ResourceDictionary rd = null;
 
@@ -32,10 +34,12 @@ namespace LogoFX.Client.Theming
                 Debug.Assert(ctor != null, "ctor != null");
                 rd = (ResourceDictionary) ctor.Invoke(new object[] {});
             });
-            var dics = new HashSet<string>();
+
             AddEntries(rd, resourceDictionary, dics);
 
-            return new[] {resourceDictionary};
+            result.Add(resourceDictionary);
+            
+            return result.ToArray();
         }
 
         private void AddEntries(ResourceDictionary source, ResourceDictionary dest, HashSet<string> dics)

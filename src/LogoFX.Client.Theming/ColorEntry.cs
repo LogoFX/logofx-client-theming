@@ -12,10 +12,9 @@ namespace LogoFX.Client.Theming
         public string Caption
         {
             get { return _caption ?? ResourceKey.ToString(); }
-            [UsedImplicitly] private set { _caption = value; }
+            set { _caption = value; }
         }
 
         public uint Color { get; set; }
-
     }
 }

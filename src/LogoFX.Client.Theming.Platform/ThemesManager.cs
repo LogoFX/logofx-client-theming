@@ -37,26 +37,60 @@ namespace LogoFX.Client.Theming
 
         #region Public Methods
 
-        public void AddDirectAssembly(string assemblyPath)
+        public void AddDirectAssembly(Assembly assembly)
         {
-            var assembly = Assembly.Load(AssemblyName.GetAssemblyName(assemblyPath));
             var types = assembly.ExportedTypes.Where(x => x.IsSubclassOf(typeof(ResourceDictionary)));
+
+            var list = new List<Tuple<ThemeResourceDictionaryAttribute, Type>>();
 
             foreach (var t in types)
             {
-                var at = t.GetCustomAttributes(typeof(ThemeResourceDictionaryAttribute)).SingleOrDefault() as ThemeResourceDictionaryAttribute;
-                if (at == null)
+                var at = t.GetCustomAttribute<ThemeResourceDictionaryAttribute>();
+                if (at != null)
                 {
-                    continue;
+                    list.Add(new Tuple<ThemeResourceDictionaryAttribute, Type>(at, t));
                 }
+            }
 
-                _themes.Add(at.Order, new TypeTheme(at.Name, t));
+            var dic = new Dictionary<string, ITheme>();
+            foreach (var tuple in list)
+            {
+                var theme = GetOrCreateTheme(tuple.Item1, tuple.Item2, list, dic);
+                if (string.IsNullOrEmpty(tuple.Item1.ParentThemeName))
+                {
+                    _themes.Add(theme.Order, theme);
+                }
             }
         }
 
         #endregion
 
         #region Private Members
+
+        private ITheme GetOrCreateTheme(
+            ThemeResourceDictionaryAttribute attr,
+            Type type,
+            List<Tuple<ThemeResourceDictionaryAttribute, Type>> list,
+            Dictionary<string, ITheme> dic)
+        {
+            // ReSharper disable once InlineOutVariableDeclaration
+            ITheme theme;
+
+            if (!dic.TryGetValue(attr.Name, out theme))
+            {
+                theme = new TypeTheme(attr.Name, type, attr.Order);
+                dic.Add(attr.Name, theme);
+
+                if (!string.IsNullOrEmpty(attr.ParentThemeName))
+                {
+                    var parentTuple = list.Single(x => x.Item1.Name == attr.ParentThemeName);
+                    var parentTheme = (ThemeTree) GetOrCreateTheme(parentTuple.Item1, parentTuple.Item2, list, dic);
+                    parentTheme.AddNode(theme);
+                }
+            }
+
+            return theme;
+        }
 
         private void Unload(ResourceDictionary[] resources)
         {
@@ -111,7 +145,7 @@ namespace LogoFX.Client.Theming
                 var tnc = _currentTheme as IThemeNotifyChanged;
                 if (tnc != null)
                 {
-                    tnc.ColorThemeChanged -= ColorThemeChanged;
+                    tnc.Updated -= Updated;
                 }
                 Unload(_resources);
                 _resources = null;
@@ -124,7 +158,7 @@ namespace LogoFX.Client.Theming
                 var tnc = _currentTheme as IThemeNotifyChanged;
                 if (tnc != null)
                 {
-                    tnc.ColorThemeChanged += ColorThemeChanged;
+                    tnc.Updated += Updated;
                 }
                 Load(_currentTheme);
             }
@@ -135,7 +169,7 @@ namespace LogoFX.Client.Theming
             CurrentIndex = _themes.IndexOfValue(CurrentTheme);
         }
 
-        private void ColorThemeChanged(object sender, EventArgs e)
+        private void Updated(object sender, EventArgs e)
         {
             Refresh();
         }
