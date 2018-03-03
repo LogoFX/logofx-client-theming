@@ -200,7 +200,7 @@ namespace LogoFX.Client.Theming
 
         public bool IsBusy
         {
-            get { return _isBusy; }
+            get => _isBusy;
             set
             {
                 if (_isBusy == value)
@@ -215,18 +215,15 @@ namespace LogoFX.Client.Theming
 
         public ITheme CurrentTheme
         {
-            get { return _currentTheme; }
-            set { SetCurrentTheme(value); }
+            get => _currentTheme;
+            set => SetCurrentTheme(value);
         }
 
-        public IEnumerable<ITheme> Themes
-        {
-            get { return _themes.Values; }
-        }
+        public IEnumerable<ITheme> Themes => _themes.Values;
 
         public int CurrentIndex
         {
-            get { return _currentIndex; }
+            get => _currentIndex;
             set
             {
                 if (_currentIndex == value)

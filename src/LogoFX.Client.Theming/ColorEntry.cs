@@ -11,8 +11,8 @@ namespace LogoFX.Client.Theming
         private string _caption;
         public string Caption
         {
-            get { return _caption ?? ResourceKey.ToString(); }
-            set { _caption = value; }
+            get => _caption ?? ResourceKey.ToString();
+            set => _caption = value;
         }
 
         public uint Color { get; set; }

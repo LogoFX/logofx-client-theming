@@ -35,9 +35,9 @@ namespace LogoFX.Client.Theming
 
         #region ITheme
 
-        public string Name { get; private set; }
+        public string Name { get; }
 
-        public int Order { get; private set; }
+        public int Order { get; }
 
         protected abstract ResourceDictionary[] LoadResoucesInternal(HashSet<string> dics);
 

@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Windows;
 using System.Windows.Threading;
@@ -30,9 +29,8 @@ namespace LogoFX.Client.Theming
             _dispatcher.Invoke(() =>
             {
                 resourceDictionary = new ResourceDictionary();
-                var ctor = _resourceDictionaryType.GetConstructor(Type.EmptyTypes);
-                Debug.Assert(ctor != null, "ctor != null");
-                rd = (ResourceDictionary) ctor.Invoke(new object[] {});
+                var ctor = _resourceDictionaryType.GetConstructor(Type.EmptyTypes);                
+                rd = (ResourceDictionary) ctor?.Invoke(new object[] {});
             });
 
             AddEntries(rd, resourceDictionary, dics);

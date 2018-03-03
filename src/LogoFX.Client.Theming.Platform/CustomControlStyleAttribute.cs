@@ -11,8 +11,8 @@ namespace LogoFX.Client.Theming
             TargetType = targetType;
         }
 
-        public Type TargetType { get; set; }
+        public Type TargetType { get; }
 
-        public string Name { get; set; }
+        public string Name { get; }
     }
 }
