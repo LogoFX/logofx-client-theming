@@ -10,47 +10,17 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
-		DebugWithFake|Any CPU = DebugWithFake|Any CPU
-		DebugWithReal|Any CPU = DebugWithReal|Any CPU
-		IntegrationWithFake|Any CPU = IntegrationWithFake|Any CPU
 		Release|Any CPU = Release|Any CPU
-		Simulator|Any CPU = Simulator|Any CPU
-		TestsWithFake|Any CPU = TestsWithFake|Any CPU
-		TestsWithReal|Any CPU = TestsWithReal|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{D446F9A7-8D9E-4372-9FEC-0AB30CC60374}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D446F9A7-8D9E-4372-9FEC-0AB30CC60374}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D446F9A7-8D9E-4372-9FEC-0AB30CC60374}.DebugWithFake|Any CPU.ActiveCfg = Debug|Any CPU
-		{D446F9A7-8D9E-4372-9FEC-0AB30CC60374}.DebugWithFake|Any CPU.Build.0 = Debug|Any CPU
-		{D446F9A7-8D9E-4372-9FEC-0AB30CC60374}.DebugWithReal|Any CPU.ActiveCfg = Debug|Any CPU
-		{D446F9A7-8D9E-4372-9FEC-0AB30CC60374}.DebugWithReal|Any CPU.Build.0 = Debug|Any CPU
-		{D446F9A7-8D9E-4372-9FEC-0AB30CC60374}.IntegrationWithFake|Any CPU.ActiveCfg = Debug|Any CPU
-		{D446F9A7-8D9E-4372-9FEC-0AB30CC60374}.IntegrationWithFake|Any CPU.Build.0 = Debug|Any CPU
 		{D446F9A7-8D9E-4372-9FEC-0AB30CC60374}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D446F9A7-8D9E-4372-9FEC-0AB30CC60374}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D446F9A7-8D9E-4372-9FEC-0AB30CC60374}.Simulator|Any CPU.ActiveCfg = Debug|Any CPU
-		{D446F9A7-8D9E-4372-9FEC-0AB30CC60374}.Simulator|Any CPU.Build.0 = Debug|Any CPU
-		{D446F9A7-8D9E-4372-9FEC-0AB30CC60374}.TestsWithFake|Any CPU.ActiveCfg = Debug|Any CPU
-		{D446F9A7-8D9E-4372-9FEC-0AB30CC60374}.TestsWithFake|Any CPU.Build.0 = Debug|Any CPU
-		{D446F9A7-8D9E-4372-9FEC-0AB30CC60374}.TestsWithReal|Any CPU.ActiveCfg = Debug|Any CPU
-		{D446F9A7-8D9E-4372-9FEC-0AB30CC60374}.TestsWithReal|Any CPU.Build.0 = Debug|Any CPU
 		{3720D35C-1548-4B53-A37D-31A5C7D49A20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3720D35C-1548-4B53-A37D-31A5C7D49A20}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3720D35C-1548-4B53-A37D-31A5C7D49A20}.DebugWithFake|Any CPU.ActiveCfg = Debug|Any CPU
-		{3720D35C-1548-4B53-A37D-31A5C7D49A20}.DebugWithFake|Any CPU.Build.0 = Debug|Any CPU
-		{3720D35C-1548-4B53-A37D-31A5C7D49A20}.DebugWithReal|Any CPU.ActiveCfg = Debug|Any CPU
-		{3720D35C-1548-4B53-A37D-31A5C7D49A20}.DebugWithReal|Any CPU.Build.0 = Debug|Any CPU
-		{3720D35C-1548-4B53-A37D-31A5C7D49A20}.IntegrationWithFake|Any CPU.ActiveCfg = Release|Any CPU
-		{3720D35C-1548-4B53-A37D-31A5C7D49A20}.IntegrationWithFake|Any CPU.Build.0 = Release|Any CPU
 		{3720D35C-1548-4B53-A37D-31A5C7D49A20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3720D35C-1548-4B53-A37D-31A5C7D49A20}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3720D35C-1548-4B53-A37D-31A5C7D49A20}.Simulator|Any CPU.ActiveCfg = Release|Any CPU
-		{3720D35C-1548-4B53-A37D-31A5C7D49A20}.Simulator|Any CPU.Build.0 = Release|Any CPU
-		{3720D35C-1548-4B53-A37D-31A5C7D49A20}.TestsWithFake|Any CPU.ActiveCfg = Release|Any CPU
-		{3720D35C-1548-4B53-A37D-31A5C7D49A20}.TestsWithFake|Any CPU.Build.0 = Release|Any CPU
-		{3720D35C-1548-4B53-A37D-31A5C7D49A20}.TestsWithReal|Any CPU.ActiveCfg = Release|Any CPU
-		{3720D35C-1548-4B53-A37D-31A5C7D49A20}.TestsWithReal|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
