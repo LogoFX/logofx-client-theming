@@ -30,15 +30,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -92,7 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LogoFX.Client.Theming\LogoFX.Client.Theming.csproj">
-      <Project>{e06c5c08-8c5f-44b1-b709-af721a8cd71b}</Project>
+      <Project>{D446F9A7-8D9E-4372-9FEC-0AB30CC60374}</Project>
       <Name>LogoFX.Client.Theming</Name>
     </ProjectReference>
   </ItemGroup>

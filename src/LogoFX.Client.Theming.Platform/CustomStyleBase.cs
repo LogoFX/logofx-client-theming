@@ -25,7 +25,7 @@ namespace LogoFX.Client.Theming
 
         #region Public Methods
 
-        public string Name { get; }
+        public string Name { get; private set; }
 
         #endregion
 
@@ -36,7 +36,7 @@ namespace LogoFX.Client.Theming
             return _colors ?? (_colors = CreateColors());
         }
 
-        public ResourceDictionary GetCustomResourceDictionary(IColorEntry[] colorEntries)
+        public ResourceDictionary GetCustomResourceDictionary(ColorEntry[] colorEntries)
         {
             var rd = CreateResourceDictionary();
 

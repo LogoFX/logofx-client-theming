@@ -10,6 +10,6 @@ namespace LogoFX.Client.Theming
 
         ResourceDictionary[] LoadResources();
 
-        void ApplyColorThemes(params IColorTheme[] colorThemes);
+        void ApplyColorThemes(params ColorTheme[] colorThemes);
     }
 }

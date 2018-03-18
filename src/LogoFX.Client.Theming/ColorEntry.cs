@@ -1,20 +1,26 @@
 ﻿using System;
-using JetBrains.Annotations;
 
 namespace LogoFX.Client.Theming
 {
     [Serializable]
-    public sealed class ColorEntry : IColorEntry
+    public sealed class ColorEntry : ResourceEntry
     {
-        public object ResourceKey { get; [UsedImplicitly] set; }
-
-        private string _caption;
-        public string Caption
+        public ColorEntry()
+            : base(null, null)
         {
-            get => _caption ?? ResourceKey.ToString();
-            set => _caption = value;
+
         }
 
-        public uint Color { get; set; }
+        public ColorEntry(string caption, object resourceKey, uint color)
+            : base(resourceKey, color)
+        {
+            Caption = caption;
+        }
+
+        public uint Color
+        {
+            get { return (uint) Value; }
+            set { Value = value; }
+        }
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Windows;
 using System.Windows.Threading;
@@ -29,8 +30,9 @@ namespace LogoFX.Client.Theming
             _dispatcher.Invoke(() =>
             {
                 resourceDictionary = new ResourceDictionary();
-                var ctor = _resourceDictionaryType.GetConstructor(Type.EmptyTypes);                
-                rd = (ResourceDictionary) ctor?.Invoke(new object[] {});
+                var ctor = _resourceDictionaryType.GetConstructor(Type.EmptyTypes);
+                Debug.Assert(ctor != null, "ctor != null");
+                rd = (ResourceDictionary) ctor.Invoke(new object[] {});
             });
 
             AddEntries(rd, resourceDictionary, dics);
@@ -69,7 +71,11 @@ namespace LogoFX.Client.Theming
                 if (colorThemes != null && colorThemes.Length > 0)
                 {
                     //TODO: optimise Color Theme code
-                    var colorEntry = colorThemes.SelectMany(x => x.Entries).SingleOrDefault(x => Equals(x.ResourceKey, key));
+                    var colorEntry = colorThemes
+                        .SelectMany(x => x.Entries)
+                        .OfType<ColorEntry>()
+                        .SingleOrDefault(x => Equals(x.ResourceKey, key));
+                    
                     if (colorEntry != null)
                     {
                         value = colorEntry.ToColor();

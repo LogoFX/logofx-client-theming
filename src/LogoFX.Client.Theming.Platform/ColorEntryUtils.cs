@@ -5,12 +5,12 @@ namespace LogoFX.Client.Theming
 {
     public static class ColorEntryUtils
     {
-        public static Color ToColor(this IColorEntry colorEntry)
+        public static Color ToColor(this ColorEntry colorEntry)
         {
             return ColorFromBytes(colorEntry.Color);
         }
 
-        public static void FromColor(this IColorEntry colorEntry, Color color)
+        public static void FromColor(this ColorEntry colorEntry, Color color)
         {
             colorEntry.Color = ColorToBytes(color);
         }

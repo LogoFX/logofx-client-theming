@@ -55,11 +55,14 @@ namespace LogoFX.Client.Theming
 
         #region IThemeTree
 
-        public IEnumerable<ITheme> Nodes => _nodes.Values;
+        public IEnumerable<ITheme> Nodes
+        {
+            get { return _nodes.Values; }
+        }
 
         public ITheme ActiveNode
         {
-            get => _activeNode;
+            get { return _activeNode; }
             set
             {
                 if (_activeNode == value)

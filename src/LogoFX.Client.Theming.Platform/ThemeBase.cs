@@ -10,7 +10,7 @@ namespace LogoFX.Client.Theming
 
         private ResourceDictionary[] _cache;
         
-        private IColorTheme[] _colorThemes;
+        private ColorTheme[] _colorThemes;
 
         #endregion
 
@@ -35,18 +35,18 @@ namespace LogoFX.Client.Theming
 
         #region ITheme
 
-        public string Name { get; }
+        public string Name { get; private set; }
 
-        public int Order { get; }
+        public int Order { get; private set; }
 
         protected abstract ResourceDictionary[] LoadResoucesInternal(HashSet<string> dics);
 
-        protected IColorTheme[] GetColorThemes()
+        protected ColorTheme[] GetColorThemes()
         {
             return _colorThemes;
         }
 
-        public void ApplyColorThemes(params IColorTheme[] colorThemes)
+        public void ApplyColorThemes(params ColorTheme[] colorThemes)
         {
             _colorThemes = colorThemes;
             RaiseUpdated();

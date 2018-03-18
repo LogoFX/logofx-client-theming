@@ -3,28 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Windows;
-using JetBrains.Annotations;
 
 namespace LogoFX.Client.Theming
 {
-    [UsedImplicitly]
     public sealed class CustomStyleManager : ICustomStyleManager
     {
         #region Fields
 
-        private readonly Dictionary<Type, List<CustomStyleBase>> _customStyles =
-            new Dictionary<Type, List<CustomStyleBase>>();
+        private readonly Dictionary<Guid, List<CustomStyleBase>> _customStyles =
+            new Dictionary<Guid, List<CustomStyleBase>>();
 
         #endregion
 
         #region Private Members
 
-        private void AddCustomStyle(Type targetType, CustomStyleBase customStyle)
+        private void AddCustomStyle(Guid id, CustomStyleBase customStyle)
         {
-            if (!_customStyles.TryGetValue(targetType, out var list))
+            if (!_customStyles.TryGetValue(id, out var list))
             {
                 list = new List<CustomStyleBase>();
-                _customStyles.Add(targetType, list);
+                _customStyles.Add(id, list);
             }
 
             list.Add(customStyle);
@@ -42,38 +40,62 @@ namespace LogoFX.Client.Theming
                     continue;
                 }
 
-                AddCustomStyle(at.TargetType, new CompiledCustomStyle(at.Name, resourceDictionaryType));
+                AddCustomStyle(at.Id, new CompiledCustomStyle(at.Name, resourceDictionaryType));
             }
         }
 
-        private void AddXaml(Type targetType, string name, string xamlText)
+        private void AddXaml(Guid id, string name, string xamlText)
         {
-            AddCustomStyle(targetType, new RawCustomStyle(name, xamlText));
+            AddCustomStyle(id, new RawCustomStyle(name, xamlText));
+        }
+
+        private bool RemoveXaml(Guid id, string name)
+        {
+            if (!_customStyles.TryGetValue(id, out var list))
+            {
+                return false;
+            }
+
+            var item = list.SingleOrDefault(x => x.Name == name);
+
+            if (item == null)
+            {
+                return false;
+            }
+
+            list.Remove(item);
+
+            if (list.Count == 0)
+            {
+                _customStyles.Remove(id);
+            }
+
+            return true;
         }
 
         #endregion
 
         #region ICustomStyleManager
 
-        string[] ICustomStyleManager.GetStyleNames(Type type)
+        string[] ICustomStyleManager.GetStyleNames(Guid id)
         {
-            return _customStyles.TryGetValue(type, out var customStyles)
+            return _customStyles.TryGetValue(id, out var customStyles)
                 ? customStyles.Select(x => x.Name).ToArray()
                 : null;
         }
 
-        CustomColor[] ICustomStyleManager.GetColors(Type targetType, string customStyleName)
+        CustomColor[] ICustomStyleManager.GetColors(Guid id, string customStyleName)
         {
-            var colors = _customStyles.TryGetValue(targetType, out var customStyles)
+            var colors = _customStyles.TryGetValue(id, out var customStyles)
                 ? customStyles.SingleOrDefault(x => x.Name == customStyleName)?.GetColors()
                 : null;
 
             return colors?.ToArray();
         }
 
-        ResourceDictionary ICustomStyleManager.GetCustomResourceDictionary(Type type, string name, IColorEntry[] colorEntries)
+        ResourceDictionary ICustomStyleManager.GetCustomResourceDictionary(Guid id, string name, ColorEntry[] colorEntries)
         {
-            if (!_customStyles.TryGetValue(type, out var customStyles))
+            if (!_customStyles.TryGetValue(id, out var customStyles))
             {
                 return null;
             }
@@ -87,9 +109,14 @@ namespace LogoFX.Client.Theming
             AddDirectAssembly(assembly);
         }
         
-        void ICustomStyleManager.AddXaml(Type targetType, string name, string xamlText)
+        void ICustomStyleManager.AddXaml(Guid id, string name, string xamlText)
         {
-            AddXaml(targetType, name, xamlText);
+            AddXaml(id, name, xamlText);
+        }
+
+        bool ICustomStyleManager.RemoveXaml(Guid id, string name)
+        {
+            return RemoveXaml(id, name);
         }
 
         #endregion

@@ -6,14 +6,16 @@ namespace LogoFX.Client.Theming
 {   
     public interface ICustomStyleManager
     {
-        string[] GetStyleNames(Type type);       
+        string[] GetStyleNames(Guid id);       
 
-        CustomColor[] GetColors(Type targetType, string customStyleName);
+        CustomColor[] GetColors(Guid id, string customStyleName);
         
-        ResourceDictionary GetCustomResourceDictionary(Type type, string name, IColorEntry[] colorEntries);
+        ResourceDictionary GetCustomResourceDictionary(Guid id, string name, ColorEntry[] colorEntries);
 
         void AddDirectAssembly(Assembly assembly);
 
-        void AddXaml(Type targetType, string name, string xamlText);
+        void AddXaml(Guid id, string name, string xamlText);
+
+        bool RemoveXaml(Guid id, string name);
     }
 }

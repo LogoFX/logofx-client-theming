@@ -5,14 +5,14 @@ namespace LogoFX.Client.Theming
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
     public class CustomControlStyleAttribute : Attribute
     {
-        public CustomControlStyleAttribute(string name, Type targetType)
+        public CustomControlStyleAttribute(string name, string id)
         {
             Name = name;
-            TargetType = targetType;
+            Id = new Guid(id);
         }
 
-        public Type TargetType { get; }
+        public Guid Id { get; set; }
 
-        public string Name { get; }
+        public string Name { get; private set; }
     }
 }

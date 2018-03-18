@@ -7,11 +7,9 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Threading;
-using JetBrains.Annotations;
 
 namespace LogoFX.Client.Theming
 {
-    [UsedImplicitly]
     public sealed class ThemesManager : IThemesManager
     {
         #region Fields
@@ -200,7 +198,7 @@ namespace LogoFX.Client.Theming
 
         public bool IsBusy
         {
-            get => _isBusy;
+            get { return _isBusy; }
             set
             {
                 if (_isBusy == value)
@@ -215,15 +213,18 @@ namespace LogoFX.Client.Theming
 
         public ITheme CurrentTheme
         {
-            get => _currentTheme;
-            set => SetCurrentTheme(value);
+            get { return _currentTheme; }
+            set { SetCurrentTheme(value); }
         }
 
-        public IEnumerable<ITheme> Themes => _themes.Values;
+        public IEnumerable<ITheme> Themes
+        {
+            get { return _themes.Values; }
+        }
 
         public int CurrentIndex
         {
-            get => _currentIndex;
+            get { return _currentIndex; }
             set
             {
                 if (_currentIndex == value)
