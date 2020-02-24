@@ -25,10 +25,11 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\..\bin\net\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\bin\net\LogoFX.Client.Theming.Platform.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -46,17 +47,57 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ColorEntryUtils.cs" />
-    <Compile Include="CompiledCustomStyle.cs" />
-    <Compile Include="CustomColor.cs" />
-    <Compile Include="CustomControlStyleAttribute.cs" />
-    <Compile Include="CustomStyleBase.cs" />
-    <Compile Include="CustomStyleManager.cs" />
-    <Compile Include="ICustomStyleManager.cs" />
-    <Compile Include="ITheme.cs" />
-    <Compile Include="IThemeNotifyChanged.cs" />
-    <Compile Include="IThemesManager.cs" />
-    <Compile Include="IThemeTree.cs" />
+    <Compile Include="..\src\ColorEntryUtils.cs">
+      <Link>ColorEntryUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CompiledCustomStyle.cs">
+      <Link>CompiledCustomStyle.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CustomColor.cs">
+      <Link>CustomColor.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CustomControlStyleAttribute.cs">
+      <Link>CustomControlStyleAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CustomStyleBase.cs">
+      <Link>CustomStyleBase.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CustomStyleManager.cs">
+      <Link>CustomStyleManager.cs</Link>
+    </Compile>
+    <Compile Include="..\src\ICustomStyleManager.cs">
+      <Link>ICustomStyleManager.cs</Link>
+    </Compile>
+    <Compile Include="..\src\ITheme.cs">
+      <Link>ITheme.cs</Link>
+    </Compile>
+    <Compile Include="..\src\IThemeNotifyChanged.cs">
+      <Link>IThemeNotifyChanged.cs</Link>
+    </Compile>
+    <Compile Include="..\src\IThemesManager.cs">
+      <Link>IThemesManager.cs</Link>
+    </Compile>
+    <Compile Include="..\src\IThemeTree.cs">
+      <Link>IThemeTree.cs</Link>
+    </Compile>
+    <Compile Include="..\src\RawCustomStyle.cs">
+      <Link>RawCustomStyle.cs</Link>
+    </Compile>
+    <Compile Include="..\src\ThemeBase.cs">
+      <Link>ThemeBase.cs</Link>
+    </Compile>
+    <Compile Include="..\src\ThemeResourceDictionaryAttribute.cs">
+      <Link>ThemeResourceDictionaryAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\src\ThemesManager.cs">
+      <Link>ThemesManager.cs</Link>
+    </Compile>
+    <Compile Include="..\src\ThemeTree.cs">
+      <Link>ThemeTree.cs</Link>
+    </Compile>
+    <Compile Include="..\src\TypeTheme.cs">
+      <Link>TypeTheme.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -70,12 +111,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="RawCustomStyle.cs" />
-    <Compile Include="ThemeBase.cs" />
-    <Compile Include="ThemeResourceDictionaryAttribute.cs" />
-    <Compile Include="ThemesManager.cs" />
-    <Compile Include="ThemeTree.cs" />
-    <Compile Include="TypeTheme.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -86,8 +121,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LogoFX.Client.Theming\LogoFX.Client.Theming.csproj">
-      <Project>{d0b78166-f19e-4d2c-8177-4985c80f0ca3}</Project>
+    <ProjectReference Include="..\..\LogoFX.Client.Theming\LogoFX.Client.Theming.csproj">
+      <Project>{d446f9a7-8d9e-4372-9fec-0ab30cc60374}</Project>
       <Name>LogoFX.Client.Theming</Name>
     </ProjectReference>
   </ItemGroup>

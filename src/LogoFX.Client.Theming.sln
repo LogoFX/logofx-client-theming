@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2036
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29318.209
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogoFX.Client.Theming", "LogoFX.Client.Theming\LogoFX.Client.Theming.csproj", "{D446F9A7-8D9E-4372-9FEC-0AB30CC60374}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogoFX.Client.Theming.Platform.WPF", "LogoFX.Client.Theming.Platform\LogoFX.Client.Theming.Platform.WPF.csproj", "{3720D35C-1548-4B53-A37D-31A5C7D49A20}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogoFX.Client.Theming.Platform.WPF", "LogoFX.Client.Theming.Platform\net\LogoFX.Client.Theming.Platform.WPF.csproj", "{3720D35C-1548-4B53-A37D-31A5C7D49A20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
