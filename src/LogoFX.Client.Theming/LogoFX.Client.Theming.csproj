@@ -2,11 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>LogoFX.Client.Theming</AssemblyName>
-    <RootNamespace>LogoFX.Client.Theming</RootNamespace>
-  </PropertyGroup>
-
-  <PropertyGroup>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <Version>2.1.0</Version>
   </PropertyGroup>
@@ -14,6 +9,9 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <OutputPath>..\bin\netstandard\Release</OutputPath>
     <DocumentationFile>..\bin\netstandard\Release\LogoFX.Client.Theming.xml</DocumentationFile>
+    <EmbedAllSources>True</EmbedAllSources>
+    <DebugType>embedded</DebugType>
+    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
 
 </Project>

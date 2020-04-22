@@ -22,14 +22,16 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">   
     <Optimize>true</Optimize>
-    <OutputPath>..\..\bin\net\Release\</OutputPath>
+    <OutputPath>..\..\bin\netframework\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\bin\net\Release\LogoFX.Client.Theming.Platform.xml</DocumentationFile>
+    <DocumentationFile>..\..\bin\netframework\Release\LogoFX.Client.Theming.Platform.xml</DocumentationFile>
+	<EmbedAllSources>True</EmbedAllSources>
+     <DebugType>embedded</DebugType>
+     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
