@@ -286,3 +286,6 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+# Generated packages and intermediate output
+output
+devops/pack/**/contents/lib
