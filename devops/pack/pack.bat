@@ -12,4 +12,4 @@ cd ..
 mkdir netcoreapp3.1
 robocopy ../../../../src/Bin/netcore/Release netcoreapp3.1 LogoFX.Client.Theming.* /E
 cd ../../
-nuget pack contents/LogoFX.Client.Theming.nuspec -OutputDirectory ../../../output
+nuget pack contents/LogoFX.Client.Theming.nuspec -OutputDirectory ../../output
