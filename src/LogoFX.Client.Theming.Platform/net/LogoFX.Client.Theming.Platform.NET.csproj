@@ -1,14 +1,12 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net5.0-windows</TargetFramework>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <UseWPF>true</UseWPF>
     <AssemblyName>LogoFX.Client.Theming.Platform</AssemblyName>
     <RootNamespace>LogoFX.Client.Theming</RootNamespace>
-    <Version>2.2.0-rc1</Version>
+    <Version>2.2.0</Version>
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <OutputPath>..\..\bin\net\Release</OutputPath>
     <DocumentationFile>..\..\bin\net\Release\LogoFX.Client.Theming.Platform.xml</DocumentationFile>
@@ -16,7 +14,6 @@
     <DebugType>embedded</DebugType>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Include="..\src\ColorEntryUtils.cs" Link="ColorEntryUtils.cs" />
     <Compile Include="..\src\CompiledCustomStyle.cs" Link="CompiledCustomStyle.cs" />
@@ -36,9 +33,7 @@
     <Compile Include="..\src\ThemeTree.cs" Link="ThemeTree.cs" />
     <Compile Include="..\src\TypeTheme.cs" Link="TypeTheme.cs" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\..\LogoFX.Client.Theming\LogoFX.Client.Theming.csproj" />
   </ItemGroup>
-
 </Project>
