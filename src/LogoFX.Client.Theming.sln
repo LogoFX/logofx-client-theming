@@ -5,9 +5,11 @@ VisualStudioVersion = 16.0.29318.209
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogoFX.Client.Theming", "LogoFX.Client.Theming\LogoFX.Client.Theming.csproj", "{D446F9A7-8D9E-4372-9FEC-0AB30CC60374}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogoFX.Client.Theming.Platform.WPF", "LogoFX.Client.Theming.Platform\net\LogoFX.Client.Theming.Platform.WPF.csproj", "{3720D35C-1548-4B53-A37D-31A5C7D49A20}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogoFX.Client.Theming.Platform.NETCore", "LogoFX.Client.Theming.Platform\netcore\LogoFX.Client.Theming.Platform.NETCore.csproj", "{DE288478-734B-49BF-B570-6FC1928CB18D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogoFX.Client.Theming.Platform.NET", "LogoFX.Client.Theming.Platform\net\LogoFX.Client.Theming.Platform.NET.csproj", "{33F3B9B3-F12D-4069-B23E-C7E75011E216}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogoFX.Client.Theming.Platform.WPF", "LogoFX.Client.Theming.Platform\netframework\LogoFX.Client.Theming.Platform.WPF.csproj", "{3720D35C-1548-4B53-A37D-31A5C7D49A20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +21,18 @@ Global
 		{D446F9A7-8D9E-4372-9FEC-0AB30CC60374}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D446F9A7-8D9E-4372-9FEC-0AB30CC60374}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D446F9A7-8D9E-4372-9FEC-0AB30CC60374}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3720D35C-1548-4B53-A37D-31A5C7D49A20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3720D35C-1548-4B53-A37D-31A5C7D49A20}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3720D35C-1548-4B53-A37D-31A5C7D49A20}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3720D35C-1548-4B53-A37D-31A5C7D49A20}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DE288478-734B-49BF-B570-6FC1928CB18D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DE288478-734B-49BF-B570-6FC1928CB18D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE288478-734B-49BF-B570-6FC1928CB18D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE288478-734B-49BF-B570-6FC1928CB18D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33F3B9B3-F12D-4069-B23E-C7E75011E216}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33F3B9B3-F12D-4069-B23E-C7E75011E216}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33F3B9B3-F12D-4069-B23E-C7E75011E216}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33F3B9B3-F12D-4069-B23E-C7E75011E216}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3720D35C-1548-4B53-A37D-31A5C7D49A20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3720D35C-1548-4B53-A37D-31A5C7D49A20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3720D35C-1548-4B53-A37D-31A5C7D49A20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3720D35C-1548-4B53-A37D-31A5C7D49A20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
