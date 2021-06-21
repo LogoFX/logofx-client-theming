@@ -1,5 +1,5 @@
 SET package_name=LogoFX.Client.Theming
-SET package_version=2.2.0-rc2
+SET package_version=2.2.0-rc3
 PowerShell -NoProfile -ExecutionPolicy Bypass -Command "& '../build/build.ps1'"
 cd ../pack
 call ./pack.bat
