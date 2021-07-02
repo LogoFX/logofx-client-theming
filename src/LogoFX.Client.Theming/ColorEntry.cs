@@ -7,10 +7,8 @@ namespace LogoFX.Client.Theming
     {
         public ColorEntry()
             : base(null, null)
-        {
-
-        }
-
+        {}
+        
         public ColorEntry(string caption, object resourceKey, uint color)
             : base(resourceKey, color)
         {
